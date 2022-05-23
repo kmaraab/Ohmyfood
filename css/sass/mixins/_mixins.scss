@@ -1,0 +1,22 @@
+
+@mixin btn-principal {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 25px;
+    color: white;
+   font-weight: bold;
+    background: linear-gradient($secondary-color, $primary-color);
+    border-radius: 50px;
+    box-shadow: 3px 6px 20px #c0c0c0;
+    padding: 15px 20px;
+    &:hover{
+        box-shadow: 3px 7px 8px darken(#c0c0c0, 8%);
+    } 
+}
+
+@mixin iconeModif {
+    cursor: pointer;
+    color: #7e7e7e;
+    font-size: 25px;
+}
