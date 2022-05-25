@@ -1,3 +1,4 @@
+//***************HEADER***************//
 header{
     & img{
             display: block;
@@ -22,15 +23,18 @@ header{
     
 }
 
+//***************MAIN***************//
+
 main{
     flex: 1 0 auto;
     font-family: $font-police;
 }
 
+//***************SECTION PRESENTATION DE LA BOITE***************//
 .message-daccueil{
     padding: 30px;
     text-align: center;
-    background-color: #f6f6f6;
+    background-color: $background-color-gris-clair;
 
     & h1{
         font-size: 27px;
@@ -47,9 +51,10 @@ main{
 
 }
 
-.list-fonctionnement{
-    padding: 20px;
+//***************SECTION FONCTIONNEMENT***************//
 
+.fonctionnement{
+    padding: 20px;
     & h1{
         font-size: 25px;
     }
@@ -96,13 +101,15 @@ main{
 }
 
 .les-restau{
-    background-color: #f6f6f6;
+    background-color: $background-color-gris-clair;
     padding: 30px 20px;
     & h1{
         font-size: 25px;
         margin-bottom: 22px;
     }
 }
+
+//***************LES CARTES RESTAUS***************//
 
 .carte-restau{
     display: block;
@@ -150,7 +157,7 @@ main{
 
 }
 
-
+//***************FOOTER***************//
 footer{
     position: relative;
     color: white;
@@ -180,5 +187,65 @@ footer{
         transform: rotate(130deg);
         margin-left: -10px;
         margin-right: 5px;
+    }
+}
+
+//***************RESPONSIVE MODE TABLETTE ET DESKTOP***************//
+//****************************************************************//
+//***************************************************************//
+
+@media screen and (min-width:700px){
+    //***************SECTION FONCTIONNEMENT***************//
+    .fonctionnement{
+        & h1{
+            margin-left: 15px;
+        }
+        &__content{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+    }
+
+    .fontionnement-onglet{
+        margin-right: 30px;
+    }
+
+    //***************LES CARTES RESTAUS***************//
+    .les-restau{
+        display: flex;
+        flex-direction: column;
+        
+        & h1{
+            margin-left: 15px;
+            margin-bottom: 0px;
+        }
+        
+        & .LesCartes{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        &--marge{
+            width: 100%;
+        }
+        & .carte-restau{
+            margin: 30px 15px;
+        }
+    }
+
+    
+    //***************FOOTER***************// 
+    footer{
+        text-align: center;
+        & .liste{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
     }
 }
