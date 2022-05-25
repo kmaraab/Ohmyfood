@@ -3,7 +3,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 25px;
+    padding: 20px 0px 20px 25px;
+    background-color: white;
+    box-shadow: 5px 0px 8px #d4d4d4;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    & img{
+        display: block;
+        width: 150px;
+        margin: auto;
+    }
     & div:nth-child(2){
         flex: auto;
     }
@@ -19,7 +29,7 @@
     width: 100%;
     height: 270px;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
 }
 
 // **********TITRE DU RESTAU*************//
@@ -76,7 +86,6 @@
 }
 
 .menu__categories{
-
     margin-bottom: 50px ;
 }
 
@@ -104,30 +113,35 @@
     margin-bottom: 20px;
 }
 
-// ****************RESPONSIVE**********//
+// **RESPONSIVE MODE TABLETTE**********//
 //************************************//
 //***********************************//
 
-@media screen and (min-width:700px){
-    // **********ICONE COEUR*************//
-    .fa-heart{
-        margin-right: 20px;
-    }
-
-    // **********LES TITRES*************//
-    h1, h2{
-        margin-left:  20px;
-    }
-
+@media screen and (min-width:768px){
     // **********LES MENUS*************//
+    .menu-content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
     .menu__categories{
-        &--content{
-            display: flex;
-            justify-content: space-between;
-            & .choix-menu{
-                width: 100%;
-                margin: 0px 20px;
-            }
+        width: 47%;
+        margin: 0px 10px;
+        & .choix-menu{
+            width: 100%;
         }
-    }  
+    }
+     
+}
+
+// ***RESPONSIVE MODE DESKTOP**********//
+//************************************//
+//***********************************//
+
+@media screen and (min-width:1080px){
+    .menu-content{
+        flex-wrap: nowrap;
+    }
 }

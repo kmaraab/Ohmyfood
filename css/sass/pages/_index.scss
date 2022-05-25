@@ -1,12 +1,5 @@
 //***************HEADER***************//
 header{
-    & img{
-            display: block;
-            width: 150px;
-            margin: auto;
-            padding: 20px 0px;
-    }
-    
     & p{
         margin: 0px;
         background-color: #eaeaea;
@@ -21,6 +14,21 @@ header{
             }
     }
     
+    & .imageLogo{
+        display: block;
+        background-color: white;
+        box-shadow: 5px 0px 8px #d4d4d4;
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        padding: 20px 0px;
+        & img{
+            display: block;
+            width: 150px;
+            margin: auto;
+        }
+    }
+    
 }
 
 //***************MAIN***************//
@@ -32,18 +40,18 @@ main{
 
 //***************SECTION PRESENTATION DE LA BOITE***************//
 .message-daccueil{
-    padding: 30px;
+    padding: 55px;
     text-align: center;
     background-color: $background-color-gris-clair;
 
     & h1{
-        font-size: 27px;
+        font-size: 22px;
         margin-top: 0px;
     }
 
     & h3{
         font-weight: 300;
-        font-size: 18px;
+        font-size: 17px;
     }
     & .btn-principal{
         @include btn-principal;
@@ -190,27 +198,31 @@ footer{
     }
 }
 
-//***************RESPONSIVE MODE TABLETTE ET DESKTOP***************//
+//***************RESPONSIVE MODE TABLETTE***************//
 //****************************************************************//
 //***************************************************************//
 
-@media screen and (min-width:700px){
+@media screen and (min-width:768px){
     //***************SECTION FONCTIONNEMENT***************//
     .fonctionnement{
         & h1{
-            margin-left: 15px;
+            text-align: center;
         }
         &__content{
             width: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
     }
 
     .fontionnement-onglet{
-        margin-right: 30px;
+        margin: 0px 20px 20px 10px;
+        width: 45%;
+        &__interne{
+            text-align: center;
+        }
     }
 
     //***************LES CARTES RESTAUS***************//
@@ -248,4 +260,31 @@ footer{
             margin-top: 30px;
         }
     }
+}
+
+//***************RESPONSIVE MODE DESKTOP***************//
+//****************************************************************//
+//***************************************************************//
+
+@media screen and (min-width:992px){
+    .fonctionnement{
+        & h1{
+            text-align: left;
+            margin-left: 15px;
+        }
+        &__content{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+    }
+
+    .fontionnement-onglet{
+        margin: 0px 20px 20px 10px;
+        width: 30%;
+        &__interne{
+            text-align: center;
+        }
+    }   
 }
