@@ -1,0 +1,196 @@
+// ************ANIMATION CATEGORIES**************//
+
+.choix-menu--animationfadein1{
+    animation: fadein 1s ease-in-out both;
+    transform-origin: bottom;
+}
+
+.choix-menu--animationfadein2{
+    animation: fadein 1s 400ms ease-in-out both;
+    transform-origin: bottom;
+}
+
+.choix-menu--animationfadein3{
+    animation: fadein 1s 400ms ease-in-out both;
+    transform-origin: bottom;
+}
+
+@keyframes fadein {
+    from{
+        transform: translateY(10px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity:1;
+    }
+}
+
+// *************ANIMATION COEUR**************//
+#iconeCoeur__input{
+    &:checked[type="checkbox"]{   
+        & + .iconeCoeur__plein{
+        animation: remplissageCoeur 300ms ease-in-out both;
+        }
+    }
+    @media screen and (min-width:992px) {
+        &:hover + .iconeCoeur__plein{
+            animation: remplissageCoeur 300ms ease-in-out both;
+        }
+    }
+}
+
+.iconeCoeur__plein{
+    transform: scale(0);
+}
+
+
+@keyframes remplissageCoeur{
+    from{
+        transform: scale(0);
+        transition: all 300ms ease-in-out;
+    }
+    to{
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to top, $secondary-color, $primary-color);
+        -webkit-background-image: linear-gradient(to top, $secondary-color, $primary-color);
+        transform: scale(1);
+        transition: all 300ms ease-in-out;
+    }
+    
+}
+
+
+//************ Animation du check ************//
+
+// AFFICHAGE DU BACKGROUND DE L'ICONE CHECK
+#choix-menu__input:checked[type="checkbox"]{
+    &~.alignement-prix {
+        & > .iconecheck{
+            animation: backgroundcheck 400ms ease-in-out both;
+        }
+    }
+}
+
+#choix-menu__input[type="checkbox"]{
+    &~.alignement-prix {
+        & > .iconecheck{
+            animation: backgroundcheck-inverse 400ms ease-in-out both;
+        }
+    }
+}
+
+@keyframes backgroundcheck {
+    from{
+        transform: scaleX(0);
+        transform-origin: right;
+        width: 0px;
+    }
+    to{
+        transform: scaleX(1);
+        transform-origin: right;
+        width: 70px;
+        margin-left: 10px;
+        opacity: 1;
+    }
+    
+}
+
+@keyframes backgroundcheck-inverse {
+    from{
+        transform: scaleX(1);
+        transform-origin: right;
+        width: 70px;
+        margin-left: 10px;
+        opacity: 1;
+    }
+    to{
+        transform: scaleX(0);
+        transform-origin: right;
+        width: 0px;
+    }
+    
+}
+
+
+// ROTATION DE L'ICONE CHECK
+#choix-menu__input:checked[type="checkbox"]{
+    &~.alignement-prix{
+        & > .iconecheck{
+            & > .iconecheck--rotate{
+                animation: rotatecheck 400ms ease-in-out both;
+            }
+        }
+    }
+}
+
+#choix-menu__input[type="checkbox"]{
+    &~.alignement-prix{
+        & > .iconecheck{
+            & > .iconecheck--rotate{
+                animation: rotatecheck-inverse 400ms ease-in-out both;
+            }
+        }
+    }
+}
+
+@keyframes rotatecheck {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(-1turn);
+    }
+}
+
+@keyframes rotatecheck-inverse {
+    from{
+        transform: rotate(-1turn);
+    }
+    to{
+        transform: rotate(0turn);
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    // AFFICHAGE DU BACKGROUND DE L'ICONE CHECK
+    #choix-menu__input:hover[type="checkbox"]{
+        &~.alignement-prix {
+            & > .iconecheck{
+                animation: backgroundcheck 400ms ease-in-out forwards;
+            }
+        }
+    }
+
+    #choix-menu__input[type="checkbox"]{
+        &~.alignement-prix {
+            & > .iconecheck{
+                animation: backgroundcheck-inverse 400ms ease-in-out both;
+            }
+        }
+    }
+
+    // ROTATION DE L'ICONE CHECK
+    #choix-menu__input:hover[type="checkbox"]{
+        &~.alignement-prix{
+            & > .iconecheck{
+                & > .iconecheck--rotate{
+                    animation: rotatecheck 400ms ease-in-out forwards;
+                }
+            }
+        }
+    }
+
+    #choix-menu__input[type="checkbox"]{
+        &~.alignement-prix{
+            & > .iconecheck{
+                & > .iconecheck--rotate{
+                    animation: rotatecheck-inverse 400ms ease-in-out both;
+                }
+            }
+        }
+    }
+}

@@ -40,9 +40,20 @@
     & i{
         @include iconeModif;
     }
+    & .iconeCoeur{
+        display: flex;
+        &__vide{
+            position: absolute;
+        }
+    }
 }
 
+
 // **********LES MENUS*************//
+.menu__categories{
+    margin-bottom: 50px ;
+}
+
 .menu{
     position: relative;
     top: 220px;
@@ -72,37 +83,94 @@
             border-bottom: 2px solid $tertiaaire-color;
         }
     }
-    & h3{
-        font-size: 17px;
-        margin: 4px 0px;
-    }
-    & p{
-        font-weight: lighter;
-        margin: 0px;
-        &:nth-child(2){
-            font-weight: bold;
-        }
-    }
-}
-
-.menu__categories{
-    margin-bottom: 50px ;
 }
 
 .choix-menu{
-    display: block;
+    position: relative;
+    overflow: hidden;
+    display: flex;
     color: black;
+    cursor: pointer;
     background-color: white;
     border-radius: 15px;
-    padding: 10px;
     box-shadow: 3px 3px 10px #d1d1d1;
     margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: flex-end;
     &__description{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 10px;
+        padding: 10px;
+        flex-grow: 1;
+        overflow: hidden;
+        & h3{
+            margin: 0px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        & p{
+            margin: 0px;
+            margin-top: 6px;
+            font-weight: lighter;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
     }
+    & .prix{
+        margin-bottom: 8px;
+    }
+}
+
+#choix-menu__input{
+    cursor: pointer;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    opacity: 0;
+}
+
+#iconeCoeur__input{
+    cursor: pointer;
+    position:absolute;
+    z-index: 99;
+    width: 25px;
+    height: 25px;
+    opacity: 0;
+}
+
+.iconecheck{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiaaire-color;
+    padding: 10px 10px;
+    height: 66px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 0px;
+    opacity: 0;
+    & p{
+        border-radius: 50px;
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & .fa-check{
+        font-size: 18px;
+        color: $tertiaaire-color;
+    }
+}
+
+.alignement-prix{
+    display: flex;
+    align-items: flex-end;
 }
 
 // **********LE BOUTON COMMANDER*************//

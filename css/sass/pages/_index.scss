@@ -28,6 +28,10 @@ header{
             margin: auto;
         }
     }
+
+    & .localisation{
+        margin-top: 70px;
+    }
     
 }
 
@@ -161,6 +165,17 @@ main{
         }
         & i{
             @include iconeModif;
+            display: inline;
+            position: absolute;
+            right: 15px;
+            bottom: 20px;
+        }
+        & #iconeCoeur__input{
+            right: 15px;
+            bottom: 20px;
+        }
+        & .iconeCoeur{
+            cursor: not-allowed;
         }
 
 }

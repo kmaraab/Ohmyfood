@@ -351,6 +351,136 @@ a {
   text-decoration: none;
 }
 
+.choix-menu--animationfadein1 {
+  animation: fadein 1s ease-in-out both;
+  transform-origin: bottom;
+}
+
+.choix-menu--animationfadein2 {
+  animation: fadein 1s 400ms ease-in-out both;
+  transform-origin: bottom;
+}
+
+.choix-menu--animationfadein3 {
+  animation: fadein 1s 400ms ease-in-out both;
+  transform-origin: bottom;
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+#iconeCoeur__input:checked[type=checkbox] + .iconeCoeur__plein {
+  animation: remplissageCoeur 300ms ease-in-out both;
+}
+@media screen and (min-width: 992px) {
+  #iconeCoeur__input:hover + .iconeCoeur__plein {
+    animation: remplissageCoeur 300ms ease-in-out both;
+  }
+}
+
+.iconeCoeur__plein {
+  transform: scale(0);
+}
+
+@keyframes remplissageCoeur {
+  from {
+    transform: scale(0);
+    transition: all 300ms ease-in-out;
+  }
+  to {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to top, #FF79DA, #9356DC);
+    -webkit-background-image: linear-gradient(to top, #FF79DA, #9356DC);
+    transform: scale(1);
+    transition: all 300ms ease-in-out;
+  }
+}
+#choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck {
+  animation: backgroundcheck 400ms ease-in-out both;
+}
+
+#choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
+  animation: backgroundcheck-inverse 400ms ease-in-out both;
+}
+
+@keyframes backgroundcheck {
+  from {
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 0px;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: right;
+    width: 70px;
+    margin-left: 10px;
+    opacity: 1;
+  }
+}
+@keyframes backgroundcheck-inverse {
+  from {
+    transform: scaleX(1);
+    transform-origin: right;
+    width: 70px;
+    margin-left: 10px;
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 0px;
+  }
+}
+#choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+  animation: rotatecheck 400ms ease-in-out both;
+}
+
+#choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+  animation: rotatecheck-inverse 400ms ease-in-out both;
+}
+
+@keyframes rotatecheck {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotatecheck-inverse {
+  from {
+    transform: rotate(-1turn);
+  }
+  to {
+    transform: rotate(0turn);
+  }
+}
+@media screen and (min-width: 992px) {
+  #choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck {
+    animation: backgroundcheck 400ms ease-in-out forwards;
+  }
+
+  #choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
+    animation: backgroundcheck-inverse 400ms ease-in-out both;
+  }
+
+  #choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+    animation: rotatecheck 400ms ease-in-out forwards;
+  }
+
+  #choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+    animation: rotatecheck-inverse 400ms ease-in-out both;
+  }
+}
 header p {
   margin: 0px;
   background-color: #eaeaea;
@@ -377,6 +507,9 @@ header .imageLogo img {
   display: block;
   width: 150px;
   margin: auto;
+}
+header .localisation {
+  margin-top: 70px;
 }
 
 main {
@@ -411,6 +544,7 @@ main {
 }
 .message-daccueil .btn-principal:hover {
   box-shadow: 3px 7px 8px #acacac;
+  background: linear-gradient(#fface8, #ae80e5);
 }
 
 .fonctionnement {
@@ -512,6 +646,18 @@ main {
   cursor: pointer;
   color: #7e7e7e;
   font-size: 25px;
+  display: block;
+  display: inline;
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+}
+.carte-restau__description #iconeCoeur__input {
+  right: 15px;
+  bottom: 20px;
+}
+.carte-restau__description .iconeCoeur {
+  cursor: not-allowed;
 }
 
 footer {
@@ -653,6 +799,17 @@ footer .fa-handshake-simple {
   cursor: pointer;
   color: #7e7e7e;
   font-size: 25px;
+  display: block;
+}
+.titre-restau .iconeCoeur {
+  display: flex;
+}
+.titre-restau .iconeCoeur__vide {
+  position: absolute;
+}
+
+.menu__categories {
+  margin-bottom: 50px;
 }
 
 .menu {
@@ -685,36 +842,93 @@ footer .fa-handshake-simple {
   left: 0;
   border-bottom: 2px solid #99E2D0;
 }
-.menu h3 {
-  font-size: 17px;
-  margin: 4px 0px;
-}
-.menu p {
-  font-weight: lighter;
-  margin: 0px;
-}
-.menu p:nth-child(2) {
-  font-weight: bold;
-}
-
-.menu__categories {
-  margin-bottom: 50px;
-}
 
 .choix-menu {
-  display: block;
+  position: relative;
+  overflow: hidden;
+  display: flex;
   color: black;
+  cursor: pointer;
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
   box-shadow: 3px 3px 10px #d1d1d1;
   margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .choix-menu__description {
+  padding: 10px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.choix-menu__description h3 {
+  margin: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.choix-menu__description p {
+  margin: 0px;
+  margin-top: 6px;
+  font-weight: lighter;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.choix-menu .prix {
+  margin-bottom: 8px;
+}
+
+#choix-menu__input {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-right: 10px;
+  z-index: 99;
+  opacity: 0;
+}
+
+#iconeCoeur__input {
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+}
+
+.iconecheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  padding: 10px 10px;
+  height: 66px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 0px;
+  opacity: 0;
+}
+.iconecheck p {
+  border-radius: 50px;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconecheck .fa-check {
+  font-size: 18px;
+  color: #99E2D0;
+}
+
+.alignement-prix {
+  display: flex;
+  align-items: flex-end;
 }
 
 .btn-principal {
@@ -734,6 +948,7 @@ footer .fa-handshake-simple {
 }
 .btn-principal:hover {
   box-shadow: 3px 7px 8px #acacac;
+  background: linear-gradient(#fface8, #ae80e5);
 }
 
 @media screen and (min-width: 768px) {
