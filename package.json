@@ -4,7 +4,8 @@
   "description": "Site de restaurant click & collet",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./css/sass/main.scss:./css/styles.css"
+    "sass": "sass --watch ./css/sass/main.scss:./css/styles.css",
+    "prefix": "postcss ./css/styles.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/kmaraab/Ohmyfood/issues"
   },
