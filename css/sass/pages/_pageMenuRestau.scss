@@ -55,6 +55,7 @@
 }
 
 .menu{
+    overflow: hidden;
     position: relative;
     top: 220px;
     padding: 25px 20px;
@@ -209,7 +210,7 @@
 //***********************************//
 
 @media screen and (min-width:1080px){
-    .menu-content{
-        flex-wrap: nowrap;
+    .menu__categories{
+        width: 31%;
     }
 }

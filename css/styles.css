@@ -426,20 +426,6 @@ a {
     opacity: 1;
   }
 }
-@keyframes backgroundcheck-inverse {
-  from {
-    transform: scaleX(1);
-    transform-origin: right;
-    width: 70px;
-    margin-left: 10px;
-    opacity: 1;
-  }
-  to {
-    transform: scaleX(0);
-    transform-origin: right;
-    width: 0px;
-  }
-}
 #choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
   animation: rotatecheck 400ms ease-in-out both;
 }
@@ -481,6 +467,96 @@ a {
     animation: rotatecheck-inverse 400ms ease-in-out both;
   }
 }
+.scaleLoading1 {
+  animation: scaleLoading 1800ms ease-in-out both;
+}
+
+.scaleLoading2 {
+  animation: scaleLoading 2000ms 100ms ease-in-out both;
+}
+
+.scaleLoading3 {
+  animation: scaleLoading 2200ms 200ms ease-in-out both;
+}
+
+.scaleLoading4 {
+  animation: scaleLoading 2400ms 300ms ease-in-out both;
+}
+
+.scaleLoading5 {
+  animation: scaleLoading 2600ms 400ms ease-in-out both;
+}
+
+@keyframes scaleLoading {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1) rotate(1turn);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.headerAccueil {
+  animation: fadeinheader 1s 2.3s ease-in-out both;
+}
+
+@keyframes fadeinheader {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mainAccueil {
+  animation: fadeinCorpsPage 1s 2.3s ease-in-out both;
+}
+
+@keyframes fadeinCorpsPage {
+  0% {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.loading {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F7F7F7;
+  padding: 100%;
+}
+.loading i {
+  font-size: 30px;
+  color: white;
+}
+.loading div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #9356DC;
+  border-radius: 50px;
+  margin: 10px;
+  width: 70px;
+}
+
 header p {
   margin: 0px;
   background-color: #eaeaea;
@@ -515,6 +591,7 @@ header .localisation {
 main {
   flex: 1 0 auto;
   font-family: roboto, verdana, sans-serif;
+  background-color: white;
 }
 
 .message-daccueil {
@@ -651,13 +728,11 @@ main {
   position: absolute;
   right: 15px;
   bottom: 20px;
+  z-index: 10;
 }
 .carte-restau__description #iconeCoeur__input {
   right: 15px;
   bottom: 20px;
-}
-.carte-restau__description .iconeCoeur {
-  cursor: not-allowed;
 }
 
 footer {
@@ -813,6 +888,7 @@ footer .fa-handshake-simple {
 }
 
 .menu {
+  overflow: hidden;
   position: relative;
   top: 220px;
   padding: 25px 20px;
@@ -969,8 +1045,8 @@ footer .fa-handshake-simple {
   }
 }
 @media screen and (min-width: 1080px) {
-  .menu-content {
-    flex-wrap: nowrap;
+  .menu__categories {
+    width: 31%;
   }
 }
 
