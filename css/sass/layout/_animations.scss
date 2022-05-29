@@ -245,13 +245,6 @@
         position: absolute;
         animation: spinner 2s ease-out 200ms both;
 
-        &--0 {
-            color: black;
-            font-family: 'Shrikhand';
-            font-size: 100px;
-            z-index: 4;
-        }
-
         &--1 {
             @include spinner-food ($primary-color, 700ms, 3);
 
