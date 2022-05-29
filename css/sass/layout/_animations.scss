@@ -98,21 +98,20 @@
     
 }
 
-// @keyframes backgroundcheck-inverse {
-//     from{
-//         transform: scaleX(1);
-//         transform-origin: right;
-//         width: 70px;
-//         margin-left: 10px;
-//         opacity: 1;
-//     }
-//     to{
-//         transform: scaleX(0);
-//         transform-origin: right;
-//         width: 0px;
-//     }
+@keyframes backgroundcheck-inverse {
+    from{
+        transform: scaleX(1);
+        transform-origin: right;
+        width: 70px;
+        opacity: 1;
+    }
+    to{
+        transform: scaleX(0);
+        transform-origin: right;
+        width: 0px;
+    }
     
-// }
+}
 
 
 // ROTATION DE L'ICONE CHECK
@@ -196,44 +195,79 @@
 }
 
 // Animation loading page
-.scaleLoading1{
-    animation: scaleLoading 1800ms ease-in-out both;
+
+@keyframes spinner {
+    
+    0%, 100% {
+    transform:rotate(-180deg);
+    opacity:0;
+  }
+  
+  20% {
+    transform: rotate(0);
+    opacity:1;
+  }
+  
+ 
+  30% {
+    transform: rotate(150deg);
+    opacity:0;
+  }
 }
 
-.scaleLoading2{
-    animation: scaleLoading 2000ms 100ms ease-in-out both;
+@keyframes spinner-background {
+  
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-.scaleLoading3{
-    animation: scaleLoading 2200ms 200ms ease-in-out both;
-}
+.spinner {
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include flexbox;
+    background-color: $background-color-gris-clair;
+    animation: spinner-background 3.2s ease-in-out both; // Arrière-plan disparaît en fondu;
 
-.scaleLoading4{
-    animation: scaleLoading 2400ms 300ms ease-in-out both;
-}
+    &__food {
 
-.scaleLoading5{
-    animation: scaleLoading 2600ms 400ms ease-in-out both;
-}
+        position: absolute;
+        animation: spinner 2s ease-out 200ms both;
 
+        &--0 {
+            color: black;
+            font-family: 'Shrikhand';
+            font-size: 100px;
+            z-index: 4;
+        }
 
-@keyframes scaleLoading{
-    0%{
-        opacity: 0;
-        transform: scale(0);
+        &--1 {
+            @include spinner-food ($primary-color, 700ms, 3);
+
+        }
+
+        &--2 {
+            @include spinner-food ($secondary-color, 1.2s, 2);
+        }
+
+        &--3 {
+            @include spinner-food ($tertiary-color, 1.7s, 1);
+        }
     }
-    70%{
-        transform: scale(1) rotate(1turn);
-        opacity: 1;
-
-    }
-    100%{
-        opacity: 0;
-        transform: scale(0);
-    }
 }
 
-// Affichage header
+// Affichage header après loading
 .headerAccueil{
     animation: fadeinheader 1s 2.3s ease-in-out both;
 }

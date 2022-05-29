@@ -22,3 +22,18 @@
     font-size: 25px;
     display: block;
 }
+
+
+@mixin flexbox ($justify: center, $items: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+    flex-direction: $direction;
+}
+
+@mixin spinner-food ($color, $delay, $index) {
+    font-size: 80px;
+    color: $color;
+    animation-delay: $delay;
+    z-index: $index;
+}

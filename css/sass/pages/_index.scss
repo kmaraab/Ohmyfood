@@ -1,31 +1,3 @@
-
-// CHARGEMENT DE LA PAGE
-
-.loading{
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #F7F7F7;
-    padding: 100%;
-    & i{
-        font-size: 30px;
-        color: white;
-    }
-    & div
-        {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: $primary-color;
-        border-radius: 50px;
-        margin: 10px;
-        width: 70px;
-    }
-}
-
 //***************HEADER***************//
 header{
     & p{
@@ -168,7 +140,7 @@ main{
         border-top-right-radius: 15px;
         & + p{
             color: #008766;
-            background-color: $tertiaaire-color;
+            background-color: $tertiary-color;
             width: fit-content;
             padding: 8px 15px;
             border-radius: 3px;
@@ -181,9 +153,7 @@ main{
 }  
 
 .carte-restau__description{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox(space-between);
         padding: 15px;
         & h3{
             margin: 0px;
@@ -252,8 +222,7 @@ footer{
         }
         &__content{
             width: 100%;
-            display: flex;
-            justify-content: center;
+            @include flexbox;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
@@ -278,9 +247,7 @@ footer{
         }
         
         & .LesCartes{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flexbox(space-between);
             width: 100%;
         }
         

@@ -81,7 +81,7 @@
             width: 60%;
             bottom: 0;
             left: 0;
-            border-bottom: 2px solid $tertiaaire-color;
+            border-bottom: 2px solid $tertiary-color;
         }
     }
 }
@@ -147,7 +147,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $tertiaaire-color;
+    background-color: $tertiary-color;
     padding: 10px 10px;
     height: 66px;
     border-top-right-radius: 15px;
@@ -165,7 +165,7 @@
     }
     & .fa-check{
         font-size: 18px;
-        color: $tertiaaire-color;
+        color: $tertiary-color;
     }
 }
 

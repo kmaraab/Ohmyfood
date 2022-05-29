@@ -426,6 +426,19 @@ a {
     opacity: 1;
   }
 }
+@keyframes backgroundcheck-inverse {
+  from {
+    transform: scaleX(1);
+    transform-origin: right;
+    width: 70px;
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 0px;
+  }
+}
 #choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
   animation: rotatecheck 400ms ease-in-out both;
 }
@@ -467,40 +480,74 @@ a {
     animation: rotatecheck-inverse 400ms ease-in-out both;
   }
 }
-.scaleLoading1 {
-  animation: scaleLoading 1800ms ease-in-out both;
-}
-
-.scaleLoading2 {
-  animation: scaleLoading 2000ms 100ms ease-in-out both;
-}
-
-.scaleLoading3 {
-  animation: scaleLoading 2200ms 200ms ease-in-out both;
-}
-
-.scaleLoading4 {
-  animation: scaleLoading 2400ms 300ms ease-in-out both;
-}
-
-.scaleLoading5 {
-  animation: scaleLoading 2600ms 400ms ease-in-out both;
-}
-
-@keyframes scaleLoading {
-  0% {
+@keyframes spinner {
+  0%, 100% {
+    transform: rotate(-180deg);
     opacity: 0;
-    transform: scale(0);
   }
-  70% {
-    transform: scale(1) rotate(1turn);
+  20% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  30% {
+    transform: rotate(150deg);
+    opacity: 0;
+  }
+}
+@keyframes spinner-background {
+  65% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: scale(0);
+    visibility: hidden;
   }
 }
+.spinner {
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #f6f6f6;
+  animation: spinner-background 3.2s ease-in-out both;
+}
+.spinner__food {
+  position: absolute;
+  animation: spinner 2s ease-out 200ms both;
+}
+.spinner__food--0 {
+  color: black;
+  font-family: "Shrikhand";
+  font-size: 100px;
+  z-index: 4;
+}
+.spinner__food--1 {
+  font-size: 80px;
+  color: #9356DC;
+  animation-delay: 700ms;
+  z-index: 3;
+}
+.spinner__food--2 {
+  font-size: 80px;
+  color: #FF79DA;
+  animation-delay: 1.2s;
+  z-index: 2;
+}
+.spinner__food--3 {
+  font-size: 80px;
+  color: #99E2D0;
+  animation-delay: 1.7s;
+  z-index: 1;
+}
+
 .headerAccueil {
   animation: fadeinheader 1s 2.3s ease-in-out both;
 }
@@ -533,30 +580,6 @@ a {
     opacity: 1;
   }
 }
-.loading {
-  display: flex;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #F7F7F7;
-  padding: 100%;
-}
-.loading i {
-  font-size: 30px;
-  color: white;
-}
-.loading div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #9356DC;
-  border-radius: 50px;
-  margin: 10px;
-  width: 70px;
-}
-
 header p {
   margin: 0px;
   background-color: #eaeaea;
@@ -710,6 +733,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   padding: 15px;
 }
 .carte-restau__description h3 {
@@ -772,6 +796,8 @@ footer .fa-handshake-simple {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 30px;
   }
@@ -796,6 +822,7 @@ footer .fa-handshake-simple {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     width: 100%;
   }
   .les-restau--marge {
