@@ -351,6 +351,10 @@ a {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .choix-menu--animationfadein1 {
   animation: fadein 1s ease-in-out both;
   transform-origin: bottom;
@@ -362,7 +366,7 @@ a {
 }
 
 .choix-menu--animationfadein3 {
-  animation: fadein 1s 400ms ease-in-out both;
+  animation: fadein 1s 600ms ease-in-out both;
   transform-origin: bottom;
 }
 
@@ -376,11 +380,11 @@ a {
     opacity: 1;
   }
 }
-#iconeCoeur__input:checked[type=checkbox] + .iconeCoeur__plein {
+.iconeCoeur__input:checked[type=checkbox] + .iconeCoeur__plein {
   animation: remplissageCoeur 300ms ease-in-out both;
 }
 @media screen and (min-width: 992px) {
-  #iconeCoeur__input:hover + .iconeCoeur__plein {
+  .iconeCoeur__input:hover + .iconeCoeur__plein {
     animation: remplissageCoeur 300ms ease-in-out both;
   }
 }
@@ -404,11 +408,11 @@ a {
     transition: all 300ms ease-in-out;
   }
 }
-#choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck {
+.choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck {
   animation: backgroundcheck 400ms ease-in-out both;
 }
 
-#choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
+.choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
   animation: backgroundcheck-inverse 400ms ease-in-out both;
 }
 
@@ -439,11 +443,11 @@ a {
     width: 0px;
   }
 }
-#choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+.choix-menu__input:checked[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
   animation: rotatecheck 400ms ease-in-out both;
 }
 
-#choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+.choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
   animation: rotatecheck-inverse 400ms ease-in-out both;
 }
 
@@ -464,19 +468,19 @@ a {
   }
 }
 @media screen and (min-width: 992px) {
-  #choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck {
+  .choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck {
     animation: backgroundcheck 400ms ease-in-out forwards;
   }
 
-  #choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
+  .choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck {
     animation: backgroundcheck-inverse 400ms ease-in-out both;
   }
 
-  #choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+  .choix-menu__input:hover[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
     animation: rotatecheck 400ms ease-in-out forwards;
   }
 
-  #choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
+  .choix-menu__input[type=checkbox] ~ .alignement-prix > .iconecheck > .iconecheck--rotate {
     animation: rotatecheck-inverse 400ms ease-in-out both;
   }
 }
@@ -523,12 +527,6 @@ a {
   position: absolute;
   animation: spinner 2s ease-out 200ms both;
 }
-.spinner__food--0 {
-  color: black;
-  font-family: "Shrikhand";
-  font-size: 100px;
-  z-index: 4;
-}
 .spinner__food--1 {
   font-size: 80px;
   color: #9356DC;
@@ -563,7 +561,7 @@ a {
     opacity: 1;
   }
 }
-.mainAccueil {
+.main-footer {
   animation: fadeinCorpsPage 1s 2.3s ease-in-out both;
 }
 
@@ -730,6 +728,7 @@ main {
 }
 
 .carte-restau__description {
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -740,10 +739,11 @@ main {
   margin: 0px;
 }
 .carte-restau__description h3 + p {
-  margin: 2px;
+  margin: 2px 2px 2px 0px;
   font-weight: lighter;
 }
-.carte-restau__description i {
+
+.iconeCoeur--accueil {
   cursor: pointer;
   color: #7e7e7e;
   font-size: 25px;
@@ -754,7 +754,7 @@ main {
   bottom: 20px;
   z-index: 10;
 }
-.carte-restau__description #iconeCoeur__input {
+.iconeCoeur__input--accueil {
   right: 15px;
   bottom: 20px;
 }
@@ -982,7 +982,7 @@ footer .fa-handshake-simple {
   margin-bottom: 8px;
 }
 
-#choix-menu__input {
+.choix-menu__input {
   cursor: pointer;
   position: absolute;
   width: 100%;
@@ -994,7 +994,7 @@ footer .fa-handshake-simple {
   opacity: 0;
 }
 
-#iconeCoeur__input {
+.iconeCoeur__input {
   cursor: pointer;
   position: absolute;
   z-index: 99;

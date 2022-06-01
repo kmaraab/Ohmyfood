@@ -1,4 +1,4 @@
-//***************HEADER***************//
+//***************HEADER PAGE D'ACCUEIL***************//
 header{
     & p{
         margin: 0px;
@@ -38,7 +38,7 @@ header{
 //***************MAIN***************//
 
 main{
-    flex: 1 0 auto;
+    flex: 1 0 auto; //le contenu du main prend tout le reste de la page pour que le footer reste toujours fixer en bas
     font-family: $font-police;
     background-color: white;
 }
@@ -153,32 +153,35 @@ main{
 }  
 
 .carte-restau__description{
-        @include flexbox(space-between);
-        padding: 15px;
-        & h3{
-            margin: 0px;
-            & + p{
-                margin: 2px;
-                font-weight: lighter;
-            }
+    color: black;
+    @include flexbox(space-between);
+    padding: 15px;
+    & h3{
+        margin: 0px;
+        & + p{
+            margin: 2px 2px 2px 0px;
+            font-weight: lighter;
         }
-        & i{
-            @include iconeModif;
-            display: inline;
-            position: absolute;
-            right: 15px;
-            bottom: 20px;
-            z-index: 10;
-        }
-        & #iconeCoeur__input{
-            right: 15px;
-            bottom: 20px;
-        }
+    }
+}
 
+.iconeCoeur{
+    &--accueil{
+        @include iconeModif;
+        display: inline;
+        position: absolute;
+        right: 15px;
+        bottom: 20px;
+        z-index: 10;
+    }
+    &__input--accueil{
+        right: 15px;
+        bottom: 20px;
+    }
 }
 
 //***************FOOTER***************//
-footer{
+footer{ 
     position: relative;
     color: white;
     background-color: #353535;
@@ -211,10 +214,10 @@ footer{
 }
 
 //***************RESPONSIVE MODE TABLETTE***************//
-//****************************************************************//
-//***************************************************************//
+//*****************************************************//
+//****************************************************//
 
-@media screen and (min-width:768px){
+@media screen and (min-width:#{$width-tablette}){
     //***************SECTION FONCTIONNEMENT***************//
     .fonctionnement{
         & h1{
@@ -272,10 +275,10 @@ footer{
 }
 
 //***************RESPONSIVE MODE DESKTOP***************//
-//****************************************************************//
-//***************************************************************//
+//****************************************************//
+//***************************************************//
 
-@media screen and (min-width:992px){
+@media screen and (min-width:#{$min-width-desktop}){
     .fonctionnement{
         & h1{
             text-align: left;

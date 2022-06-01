@@ -1,4 +1,4 @@
-// **********HEADER*************//
+// **********HEADER PAGE MENU*************//
 #header-page-restau{
     display: flex;
     align-items: center;
@@ -122,7 +122,7 @@
     }
 }
 
-#choix-menu__input{
+.choix-menu__input{
     cursor: pointer;
     position:absolute;
     width: 100%;
@@ -134,7 +134,7 @@
     opacity: 0;
 }
 
-#iconeCoeur__input{
+.iconeCoeur__input{
     cursor: pointer;
     position:absolute;
     z-index: 99;
@@ -186,7 +186,7 @@
 //************************************//
 //***********************************//
 
-@media screen and (min-width:768px){
+@media screen and (min-width:#{$width-tablette}){
     // **********LES MENUS*************//
     .menu-content{
         width: 100%;
@@ -209,7 +209,7 @@
 //************************************//
 //***********************************//
 
-@media screen and (min-width:1080px){
+@media screen and (min-width:#{$width-desktop}){ //POUR L'ALIGNEMENT DES ELEMENTS DE LA PAGE MENU
     .menu__categories{
         width: 31%;
     }
