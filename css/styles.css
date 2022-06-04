@@ -621,7 +621,7 @@ main {
   background-color: #f6f6f6;
 }
 .message-daccueil h1 {
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 0px;
 }
 .message-daccueil h3 {
@@ -736,6 +736,7 @@ main {
   padding: 15px;
 }
 .carte-restau__description h3 {
+  font-size: 20px;
   margin: 0px;
 }
 .carte-restau__description h3 + p {
@@ -781,6 +782,9 @@ footer p {
 }
 footer a {
   color: white;
+}
+footer .densiteElement {
+  font-weight: lighter;
 }
 footer .fa-handshake-simple {
   transform: rotate(130deg);
@@ -979,7 +983,7 @@ footer .fa-handshake-simple {
   white-space: nowrap;
 }
 .choix-menu .prix {
-  margin-bottom: 8px;
+  margin: 0px 10px 8px 20px;
 }
 
 .choix-menu__input {

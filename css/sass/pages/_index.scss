@@ -50,7 +50,7 @@ main{
     background-color: $background-color-gris-clair;
 
     & h1{
-        font-size: 22px;
+        font-size: 25px;
         margin-top: 0px;
     }
 
@@ -157,6 +157,7 @@ main{
     @include flexbox(space-between);
     padding: 15px;
     & h3{
+        font-size: 20px;
         margin: 0px;
         & + p{
             margin: 2px 2px 2px 0px;
@@ -205,6 +206,9 @@ footer{
     }
     & a{
         color: white;
+    }
+    & .densiteElement{
+        font-weight: lighter;
     }
     & .fa-handshake-simple{
         transform: rotate(130deg);
